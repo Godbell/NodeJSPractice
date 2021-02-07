@@ -20,3 +20,4 @@ let modulePracObject = new ModulePrac();
 
 // 클래스 메서드 사용
 modulePracObject.exampleFunction();
+
