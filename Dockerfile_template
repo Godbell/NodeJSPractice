@@ -1,4 +1,10 @@
 FROM node:12
+
+ENV DB_HOST=""
+ENV DB_USER=""
+ENV DB_PWD=""
+ENV DB_NAME=""
+
 WORKDIR /app
 COPY package*.json /app
 RUN npm install
