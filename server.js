@@ -9,7 +9,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import http from "http";
 import https from "https";
-import { dbConnection } from "./lib/db.js";
+import { db_config } from "./lib/db.js";
 
 const server = express();
 server.use(bodyParser.json());
@@ -19,7 +19,7 @@ server.get("/api/member/get-all", (req,
                            res) => {
     let sqlQuery = "SELECT * FROM CMembers";    // query string
     try {
-        dbConnection.query                      // send query to MySQL
+        db_config.query                      // send query to MySQL
         (
             sqlQuery
             , function (err, rows, fields) {
@@ -121,7 +121,7 @@ server.post("/api/member/add", (req,
             + "\"" + reqJson['Comment'] + "\""
             + ")";
 
-        dbConnection.query(sqlQuery, function (err, rows, fields) {
+        db_config.query(sqlQuery, function (err, rows, fields) {
             if (err)
             {
                 console.log(err);
