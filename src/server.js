@@ -1,15 +1,13 @@
 /*
  * 파일명: main.js
  * 생성일: 2021-02-07
- * 최종 수정일: 2021-02-08
+ * 최종 수정일: 2021-06-06
  * 설명: Web 백엔드 서버 개발 공부: Rest API with MySQL
  */
 
 import express from "express";
 import bodyParser from "body-parser";
-import http from "http";
-import https from "https";
-import { db_config } from "./lib/db.js";
+import { db_config } from "./db.js";
 
 const server = express();
 server.use(bodyParser.json());
